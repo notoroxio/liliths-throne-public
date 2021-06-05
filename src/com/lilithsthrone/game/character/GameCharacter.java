@@ -19500,12 +19500,7 @@ public abstract class GameCharacter implements XMLSaving {
 				birthedLitter.getFather().getLittersFathered().add(birthedLitter);
 			}
 			
-			// Remove NPCs if not related to the player:
-			if(!this.isPlayer() && (birthedLitter.getFather()==null || !birthedLitter.getFather().isPlayer())) {
-				for(String npc : birthedLitter.getOffspring()) {
-					Main.game.removeNPC(npc);
-				}
-			}
+			// Remove NPCs if not related to the player. Actually, don't do that, bc that's gay.
 			
 		} else {
 			for(String npc : pregnantLitter.getOffspring()) {
